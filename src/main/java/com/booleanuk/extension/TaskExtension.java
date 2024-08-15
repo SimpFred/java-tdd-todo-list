@@ -1,5 +1,6 @@
 package com.booleanuk.extension;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class TaskExtension {
@@ -30,8 +31,8 @@ public class TaskExtension {
         return UUID.randomUUID().toString();
     }
 
-    public void getCreatedAt() {
-
+    public LocalDateTime getCreatedAt() {
+        return LocalDateTime.now();
     }
 
 }
