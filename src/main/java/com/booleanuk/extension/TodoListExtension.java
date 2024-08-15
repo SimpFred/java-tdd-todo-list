@@ -89,6 +89,13 @@ public class TodoListExtension {
     }
 
     public boolean getTask(String id) {
-        return true;
+        for (TaskExtension task : tasks.keySet()) {
+            if (task.getId().equals(id)) {
+                System.out.println("Task found: " + task.getName() + ", " + task.getDescription());
+                return true;
+            }
+        }
+        System.out.println("Task not found");
+        return false;
     }
 }
