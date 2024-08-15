@@ -114,5 +114,14 @@ class TodoListExtensionExtensionTest {
 
     }
 
+    @Test
+    public void testGetTask() {
+        TodoListExtension todoList = new TodoListExtension();
+        TaskExtension task1 = new TaskExtension("task name 1", "task description 1");
+        TaskExtension task2 = new TaskExtension("task name 2", "task description 2");
+        todoList.addTask(task1, false);
+        todoList.addTask(task2, false);
+        Assertions.assertTrue(todoList.getTask(task1.getId()), "The task should be found in the list");
+    }
 }
 
