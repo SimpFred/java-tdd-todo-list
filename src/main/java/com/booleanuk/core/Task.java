@@ -1,5 +1,7 @@
 package com.booleanuk.core;
 
+import java.util.UUID;
+
 public class Task {
 
     private final String name;
@@ -25,7 +27,7 @@ public class Task {
     }
 
     private String generateId() {
-        return "id";
+        return UUID.randomUUID().toString();
     }
 
 }
