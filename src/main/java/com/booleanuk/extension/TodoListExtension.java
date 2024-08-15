@@ -1,6 +1,5 @@
 package com.booleanuk.extension;
 
-import com.booleanuk.core.Task;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -100,6 +99,14 @@ public class TodoListExtension {
     }
 
     public boolean updateTaskName(String id, String name) {
-        return true;
+        for (TaskExtension task : tasks.keySet()) {
+            if (task.getId().equals(id)) {
+                task.setName(name);
+                System.out.println("Task name updated to: " + name);
+                return true;
+            }
+        }
+        System.out.println("Task not found");
+        return false;
     }
 }
