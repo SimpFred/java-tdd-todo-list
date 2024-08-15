@@ -7,8 +7,8 @@ public class TaskExtensionTest {
 
     @Test
     public void testCreatingATask() {
-        Task todoList = new Task("task name", "task description");
-        Assertions.assertNotNull(todoList, "The TodoList object should not be null after creation");
+        Task task = new Task("task name", "task description");
+        Assertions.assertNotNull(task, "The TodoList object should not be null after creation");
     }
 
     @Test
