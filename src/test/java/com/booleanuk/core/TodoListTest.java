@@ -3,6 +3,8 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class TodoListTest {
     @Test
     public void testCreatingTodoList() {
@@ -38,13 +40,25 @@ class TodoListTest {
         Task task2 = new Task("task name 2", "task description 2");
         todoList.addTask(task1, false);
         todoList.addTask(task2, false);
-        Assertions.assertEquals(2, todoList.getAllTasks().size(), "The number of tasks should be 2");
+        Assertions.assertEquals(2, todoList.getAllTasks(true).size(), "The number of tasks should be 2");
 
         todoList.removeTask(task1);
-        Assertions.assertEquals(1, todoList.getAllTasks().size(), "The number of tasks should be 1");
+        Assertions.assertEquals(1, todoList.getAllTasks(true).size(), "The number of tasks should be 1");
 
         todoList.removeTask(task2);
-        Assertions.assertEquals(0, todoList.getAllTasks().size(), "The number of tasks should be 0");
+        Assertions.assertEquals(0, todoList.getAllTasks(true).size(), "The number of tasks should be 0");
+
+        Task task3 = new Task("task name 3", "task description 3");
+        todoList.addTask(task1, false);
+        todoList.addTask(task2, false);
+        todoList.addTask(task3, false);
+
+        List <Task> allTasks = todoList.getAllTasks(true);
+        Assertions.assertEquals("task name 1", allTasks.get(0).getName(), "The first task name should be 'task name 1'");
+        Assertions.assertEquals("task name 2", allTasks.get(1).getName(), "The Second task name should be 'task name 2'");
+        Assertions.assertEquals("task name 3", allTasks.get(2).getName(), "The Second task name should be 'task name 3'");
+
+
     }
 
     @Test
@@ -94,4 +108,6 @@ class TodoListTest {
         Assertions.assertFalse(todoList.searchTask(task2), "The task should not be found in the list");
 
     }
+
 }
+
