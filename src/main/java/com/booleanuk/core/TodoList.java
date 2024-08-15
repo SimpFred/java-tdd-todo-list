@@ -32,7 +32,7 @@ public class TodoList {
     }
 
     public boolean changeTaskStatus(Task task, boolean isCompleted) {
-        if (task == null) {
+        if (task == null || !tasks.containsKey(task)) {
             return false;
         }
         tasks.put(task, isCompleted);
