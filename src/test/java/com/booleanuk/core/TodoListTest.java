@@ -56,5 +56,6 @@ class TodoListTest {
         todoList.addTask(task2, false);
 
         Assertions.assertTrue(todoList.changeTaskStatus(task1, true), "The task status should be changed to true");
+        Assertions.assertFalse(todoList.changeTaskStatus(null, true), "The task status should be changed to true");
     }
 }
