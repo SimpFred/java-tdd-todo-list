@@ -88,7 +88,10 @@ class TodoListTest {
         Task task1 = new Task("task name 1", "task description 1");
         Task task2 = new Task("task name 2", "task description 2");
         todoList.addTask(task1, false);
-        todoList.addTask(task2, false);
         Assertions.assertTrue(todoList.searchTask(task1), "The task should be found in the list");
+
+        Assertions.assertFalse(todoList.searchTask(null), "The task should not be found in the list");
+        Assertions.assertFalse(todoList.searchTask(task2), "The task should not be found in the list");
+
     }
 }
