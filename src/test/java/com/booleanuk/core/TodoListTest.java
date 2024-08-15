@@ -5,9 +5,15 @@ import org.junit.jupiter.api.Test;
 
 class TodoListTest {
     @Test
-    public void exampleTest() {
-        String hello = "Hello";
-        Assertions.assertEquals("Hello", hello);
-        Assertions.assertNotEquals("Goodbye", hello);
+    public void testCreatingTodoList() {
+        TodoList todoList = new TodoList();
+        Assertions.assertNotNull(todoList, "The TodoList object should not be null after creation");
+    }
+
+    @Test
+    public void testAddTask() {
+        TodoList todoList = new TodoList();
+        Task task = new Task("task name", "task description");
+        Assertions.assertTrue(todoList.addTask(task, false), "The task should be added to the TodoList");
     }
 }
