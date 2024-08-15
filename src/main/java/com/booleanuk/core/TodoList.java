@@ -49,4 +49,14 @@ public class TodoList {
         }
         return completedTasks;
     }
+
+    public List<Task> getIncompleteTasks() {
+        List<Task> incompleteTasks = new ArrayList<>();
+        for (Map.Entry<Task, Boolean> entry : tasks.entrySet()) {
+            if (!entry.getValue()) {
+                incompleteTasks.add(entry.getKey());
+            }
+        }
+        return incompleteTasks;
+    }
 }
