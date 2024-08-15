@@ -45,12 +45,17 @@ public class TodoListExtension {
         return allTasks;
     }
 
-    public boolean changeTaskStatus(TaskExtension task, boolean isCompleted) {
-        if (task == null || !tasks.containsKey(task)) {
+    public boolean changeTaskStatus(String id, boolean isCompleted) {
+        if (id == null) {
             return false;
         }
-        tasks.put(task, isCompleted);
-        return true;
+       for (TaskExtension task : tasks.keySet()) {
+           if (task.getId().equals(id)) {
+               tasks.put(task, isCompleted);
+               return true;
+           }
+       }
+       return false;
     }
 
     public List<TaskExtension> getCompleteTasks() {
