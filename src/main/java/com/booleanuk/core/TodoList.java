@@ -17,4 +17,8 @@ public class TodoList {
         tasks.put(task, isCompleted);
         return true;
     }
+
+    public boolean removeTask(Task task) {
+        return true;
+    }
 }
