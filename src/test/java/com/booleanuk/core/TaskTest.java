@@ -16,4 +16,10 @@ public class TaskTest {
         Task todoList = new Task("task name", "task description");
         Assertions.assertEquals("task name", todoList.getName(), "The name of the task should be 'task name'");
     }
+
+    @Test
+    public void testGetDescription() {
+        Task todoList = new Task("task name", "task description");
+        Assertions.assertEquals("task description", todoList.getDescription(), "The description of the task should be 'task description'");
+    }
 }
