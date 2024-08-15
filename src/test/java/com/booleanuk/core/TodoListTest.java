@@ -30,4 +30,14 @@ class TodoListTest {
 
         Assertions.assertFalse(todoList.removeTask(task), "The task should not be in the list anymore");
     }
+
+    @Test
+    public void testGetAllTasks() {
+        TodoList todoList = new TodoList();
+        Task task1 = new Task("task name 1", "task description 1");
+        Task task2 = new Task("task name 2", "task description 2");
+        todoList.addTask(task1, false);
+        todoList.addTask(task2, false);
+        Assertions.assertEquals(2, todoList.getAllTasks().size(), "The number of tasks should be 2");
+    }
 }
