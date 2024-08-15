@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class TaskExtension {
 
-    private final String name;
+    private String name;
     private final String description;
     private final String id;
 
@@ -33,6 +33,10 @@ public class TaskExtension {
 
     public LocalDateTime getCreatedAt() {
         return LocalDateTime.now();
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
