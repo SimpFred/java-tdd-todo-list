@@ -126,5 +126,17 @@ class TodoListExtensionExtensionTest {
         Assertions.assertFalse(todoList.getTask(null), "The task should not be found in the list");
         Assertions.assertFalse(todoList.getTask("123"), "The task should not be found in the list");
     }
+
+    // I want to update the name of a task by providing its ID and a new name.
+
+    @Test
+    public void testUpdateTaskName() {
+        TodoListExtension todoList = new TodoListExtension();
+        TaskExtension task1 = new TaskExtension("task name 1", "task description 1");
+        todoList.addTask(task1, false);
+        Assertions.assertTrue(todoList.updateTaskName(task1.getId(), "new task name"), "The task name should be updated");
+        Assertions.assertEquals("new task name", task1.getName(), "The task name should be 'new task name'");
+
+    }
 }
 
