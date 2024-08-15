@@ -19,6 +19,9 @@ public class TodoList {
     }
 
     public boolean removeTask(Task task) {
+        if (task == null) {
+            return false;
+        }
         tasks.remove(task);
         return true;
     }
