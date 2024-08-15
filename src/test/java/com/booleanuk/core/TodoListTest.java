@@ -46,4 +46,15 @@ class TodoListTest {
         todoList.removeTask(task2);
         Assertions.assertEquals(0, todoList.getAllTasks().size(), "The number of tasks should be 0");
     }
+
+    @Test
+    public void  {
+        TodoList todoList = new TodoList();
+        Task task1 = new Task("task name 1", "task description 1");
+        Task task2 = new Task("task name 2", "task description 2");
+        todoList.addTask(task1, false);
+        todoList.addTask(task2, false);
+
+        Assertions.assertTrue(todoList.changeTaskStatus(task1, true), "The task status should be changed to true");
+    }
 }
