@@ -98,4 +98,8 @@ public class TodoListExtension {
         System.out.println("Task not found");
         return false;
     }
+
+    public boolean updateTaskName(String id, String name) {
+        return true;
+    }
 }
