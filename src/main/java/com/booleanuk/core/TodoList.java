@@ -65,9 +65,8 @@ public class TodoList {
             System.out.println("Task not found");
             return false;
         }
-        if (tasks.get(task) != null) {
-            System.out.println("Task found: " + task.getName());
-        }
-        return tasks.get(task) != null;
+        Boolean isCompleted = tasks.get(task);
+        System.out.println("Task found: " + task.getName() + ", " + task.getDescription() + ", Completed: " + isCompleted);
+        return true;
     }
 }
