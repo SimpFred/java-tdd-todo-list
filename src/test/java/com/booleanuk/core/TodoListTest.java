@@ -71,4 +71,14 @@ class TodoListTest {
         todoList.addTask(task2, false);
         Assertions.assertEquals(1, todoList.getCompleteTasks().size(), "The number of complete tasks should be 1");
     }
+
+    @Test
+    public void testGetIncompleteTasks() {
+        TodoList todoList = new TodoList();
+        Task task1 = new Task("task name 1", "task description 1");
+        Task task2 = new Task("task name 2", "task description 2");
+        todoList.addTask(task1, true);
+        todoList.addTask(task2, false);
+        Assertions.assertEquals(1, todoList.getIncompleteTasks().size(), "The number of complete tasks should be 1");
+    }
 }
