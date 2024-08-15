@@ -9,12 +9,12 @@ import java.util.Map;
 
 public class TodoListExtension {
 
-    private Map<Task, Boolean> tasks;
+    private Map<TaskExtension, Boolean> tasks;
 
     public TodoListExtension() {
         this.tasks = new HashMap<>();
     }
-    public boolean addTask(Task task, boolean isCompleted) {
+    public boolean addTask(TaskExtension task, boolean isCompleted) {
         if (task == null) {
             return false;
         }
@@ -22,7 +22,7 @@ public class TodoListExtension {
         return true;
     }
 
-    public boolean removeTask(Task task) {
+    public boolean removeTask(TaskExtension task) {
         if (task == null || !tasks.containsKey(task)) {
             return false;
         }
@@ -30,8 +30,8 @@ public class TodoListExtension {
         return true;
     }
 
-    public List<Task> getAllTasks(boolean ascendingOrder) {
-        List<Task> allTasks = new ArrayList<>(tasks.keySet());
+    public List<TaskExtension> getAllTasks(boolean ascendingOrder) {
+        List<TaskExtension> allTasks = new ArrayList<>(tasks.keySet());
         if (ascendingOrder) {
             allTasks.sort((task1, task2) -> task1.getName().compareTo(task2.getName()));
         } else {
@@ -39,13 +39,13 @@ public class TodoListExtension {
         }
 
         System.out.println("All tasks:");
-        for (Task task : allTasks) {
+        for (TaskExtension task : allTasks) {
             System.out.println(task.getName() + "\nDescription: " + task.getDescription());
         }
         return allTasks;
     }
 
-    public boolean changeTaskStatus(Task task, boolean isCompleted) {
+    public boolean changeTaskStatus(TaskExtension task, boolean isCompleted) {
         if (task == null || !tasks.containsKey(task)) {
             return false;
         }
@@ -53,9 +53,9 @@ public class TodoListExtension {
         return true;
     }
 
-    public List<Task> getCompleteTasks() {
-        List<Task> completedTasks = new ArrayList<>();
-        for (Map.Entry<Task, Boolean> entry : tasks.entrySet()) {
+    public List<TaskExtension> getCompleteTasks() {
+        List<TaskExtension> completedTasks = new ArrayList<>();
+        for (Map.Entry<TaskExtension, Boolean> entry : tasks.entrySet()) {
             if (entry.getValue()) {
                 completedTasks.add(entry.getKey());
             }
@@ -63,9 +63,9 @@ public class TodoListExtension {
         return completedTasks;
     }
 
-    public List<Task> getIncompleteTasks() {
-        List<Task> incompleteTasks = new ArrayList<>();
-        for (Map.Entry<Task, Boolean> entry : tasks.entrySet()) {
+    public List<TaskExtension> getIncompleteTasks() {
+        List<TaskExtension> incompleteTasks = new ArrayList<>();
+        for (Map.Entry<TaskExtension, Boolean> entry : tasks.entrySet()) {
             if (!entry.getValue()) {
                 incompleteTasks.add(entry.getKey());
             }
@@ -73,7 +73,7 @@ public class TodoListExtension {
         return incompleteTasks;
     }
 
-    public boolean searchTask(Task task) {
+    public boolean searchTask(TaskExtension task) {
         if (task == null || tasks.get(task) == null) {
             System.out.println("Task not found");
             return false;
