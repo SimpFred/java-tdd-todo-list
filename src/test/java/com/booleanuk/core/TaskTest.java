@@ -22,4 +22,10 @@ public class TaskTest {
         Task todoList = new Task("task name", "task description");
         Assertions.assertEquals("task description", todoList.getDescription(), "The description of the task should be 'task description'");
     }
+
+    @Test
+    public void testGetId() {
+        Task todoList = new Task("task name", "task description");
+        Assertions.assertNotNull(todoList.getId(), "The id of the task should not be null");
+    }
 }
