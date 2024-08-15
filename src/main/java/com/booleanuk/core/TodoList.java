@@ -19,7 +19,7 @@ public class TodoList {
     }
 
     public boolean removeTask(Task task) {
-        if (task == null) {
+        if (task == null || !tasks.containsKey(task)) {
             return false;
         }
         tasks.remove(task);
