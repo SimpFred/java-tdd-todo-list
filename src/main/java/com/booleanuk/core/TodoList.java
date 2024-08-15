@@ -59,4 +59,15 @@ public class TodoList {
         }
         return incompleteTasks;
     }
+
+    public boolean searchTask(Task task) {
+        if (task == null || tasks.get(task) == null) {
+            System.out.println("Task not found");
+            return false;
+        }
+        if (tasks.get(task) != null) {
+            System.out.println("Task found: " + task.getName());
+        }
+        return tasks.get(task) != null;
+    }
 }
