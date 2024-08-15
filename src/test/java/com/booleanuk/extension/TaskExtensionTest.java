@@ -42,4 +42,11 @@ public class TaskExtensionTest {
         Assertions.assertNotEquals(createdAt, createdAt2, "The createdAt of the task should be different");
 
     }
+
+    @Test
+    public void testSetName() {
+        TaskExtension task = new TaskExtension("task name", "task description");
+        task.setName("new task name");
+        Assertions.assertEquals("new task name", task.getName(), "The name of the task should be 'new task name'");
+    }
 }
