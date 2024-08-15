@@ -48,7 +48,7 @@ class TodoListTest {
     }
 
     @Test
-    public void  {
+    public void testChangeTaskStatus() {
         TodoList todoList = new TodoList();
         Task task1 = new Task("task name 1", "task description 1");
         Task task2 = new Task("task name 2", "task description 2");

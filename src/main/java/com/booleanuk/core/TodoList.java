@@ -30,4 +30,8 @@ public class TodoList {
     public List<Task> getAllTasks() {
         return List.copyOf(tasks.keySet());
     }
+
+    public boolean changeTaskStatus(Task task, boolean isCompleted) {
+        return true;
+    }
 }
