@@ -35,6 +35,11 @@ public class TodoList {
         } else {
             allTasks.sort((task1, task2) -> task2.getName().compareTo(task1.getName()));
         }
+
+        System.out.println("All tasks:");
+        for (Task task : allTasks) {
+            System.out.println(task.getName() + "\nDescription: " + task.getDescription());
+        }
         return allTasks;
     }
 
