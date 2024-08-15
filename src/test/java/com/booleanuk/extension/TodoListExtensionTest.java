@@ -124,6 +124,7 @@ class TodoListExtensionExtensionTest {
         Assertions.assertTrue(todoList.getTask(task1.getId()), "The task should be found in the list");
 
         Assertions.assertFalse(todoList.getTask(null), "The task should not be found in the list");
+        Assertions.assertFalse(todoList.getTask("123"), "The task should not be found in the list");
     }
 }
 
