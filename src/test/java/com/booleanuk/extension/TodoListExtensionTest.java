@@ -74,11 +74,11 @@ class TodoListExtensionExtensionTest {
         todoList.addTask(task1, false);
         todoList.addTask(task2, false);
 
-        Assertions.assertTrue(todoList.changeTaskStatus(task1, true), "The task status should be changed to true");
+        Assertions.assertTrue(todoList.changeTaskStatus(task1.getId(), true), "The task status should be changed to true");
         Assertions.assertFalse(todoList.changeTaskStatus(null, true), "The task status should be changed to true");
 
         TaskExtension task3 = new TaskExtension("task name 3", "task description 3");
-        Assertions.assertFalse(todoList.changeTaskStatus(task3, true), "Should return false if the task is not in the list");
+        Assertions.assertFalse(todoList.changeTaskStatus(task3.getId(), true), "Should return false if the task is not in the list");
     }
 
     @Test
