@@ -8,11 +8,17 @@ public class TaskExtension {
     private String name;
     private final String description;
     private final String id;
+    private final LocalDateTime createdAt;
 
     public TaskExtension(String name, String description) {
         this.name = name;
         this.description = description;
         this.id = generateId();
+        this.createdAt = generateCreatedAt();
+    }
+
+    private LocalDateTime generateCreatedAt() {
+        return LocalDateTime.now();
     }
 
     public String getName() {
@@ -32,7 +38,7 @@ public class TaskExtension {
     }
 
     public LocalDateTime getCreatedAt() {
-        return LocalDateTime.now();
+        return this.createdAt;
     }
 
     public void setName(String name) {

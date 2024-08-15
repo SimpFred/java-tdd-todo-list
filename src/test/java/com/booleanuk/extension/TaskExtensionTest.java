@@ -33,11 +33,16 @@ public class TaskExtensionTest {
 
     @Test
     public void testGetCreatedAt() {
-        TaskExtension task = new TaskExtension("task name", "task description");
+        TaskExtension task = new TaskExtension("task name1", "task description1");
         LocalDateTime createdAt = task.getCreatedAt();
         Assertions.assertNotNull(createdAt, "The createdAt of the task should not be null");
-
-        TaskExtension task2 = new TaskExtension("task name", "task description");
+        try {
+            // 100 milliseconds
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        TaskExtension task2 = new TaskExtension("task name2", "task description2");
         LocalDateTime createdAt2 = task2.getCreatedAt();
         Assertions.assertNotEquals(createdAt, createdAt2, "The createdAt of the task should be different");
 
