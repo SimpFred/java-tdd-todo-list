@@ -27,5 +27,7 @@ class TodoListTest {
         Assertions.assertTrue(todoList.removeTask(task), "The task should be removed from the TodoList");
 
         Assertions.assertFalse(todoList.removeTask(null), "The task should be removed from the TodoList");
+
+        Assertions.assertFalse(todoList.removeTask(task), "The task should not be in the list anymore");
     }
 }
