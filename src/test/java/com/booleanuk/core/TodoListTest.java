@@ -58,6 +58,11 @@ class TodoListTest {
         Assertions.assertEquals("task name 2", allTasks.get(1).getName(), "The Second task name should be 'task name 2'");
         Assertions.assertEquals("task name 3", allTasks.get(2).getName(), "The Second task name should be 'task name 3'");
 
+        List <Task> allTasksDesc = todoList.getAllTasks(false);
+        Assertions.assertEquals("task name 3", allTasksDesc.get(0).getName(), "The first task name should be 'task name 3'");
+        Assertions.assertEquals("task name 2", allTasksDesc.get(1).getName(), "The Second task name should be 'task name 2'");
+        Assertions.assertEquals("task name 1", allTasksDesc.get(2).getName(), "The Second task name should be 'task name 1'");
+
 
     }
 
