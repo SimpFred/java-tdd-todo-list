@@ -28,8 +28,14 @@ public class TodoList {
         return true;
     }
 
-    public List<Task> getAllTasks() {
-        return List.copyOf(tasks.keySet());
+    public List<Task> getAllTasks(boolean ascendingOrder) {
+        List<Task> allTasks = new ArrayList<>(tasks.keySet());
+        if (ascendingOrder) {
+            allTasks.sort((task1, task2) -> task1.getName().compareTo(task2.getName()));
+        } else {
+            allTasks.sort((task1, task2) -> task2.getName().compareTo(task1.getName()));
+        }
+        return allTasks;
     }
 
     public boolean changeTaskStatus(Task task, boolean isCompleted) {
