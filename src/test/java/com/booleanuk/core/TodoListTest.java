@@ -57,5 +57,8 @@ class TodoListTest {
 
         Assertions.assertTrue(todoList.changeTaskStatus(task1, true), "The task status should be changed to true");
         Assertions.assertFalse(todoList.changeTaskStatus(null, true), "The task status should be changed to true");
+
+        Task task3 = new Task("task name 3", "task description 3");
+        Assertions.assertFalse(todoList.changeTaskStatus(task3, true), "Should return false if the task is not in the list");
     }
 }
