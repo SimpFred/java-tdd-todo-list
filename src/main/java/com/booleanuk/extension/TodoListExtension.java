@@ -87,4 +87,8 @@ public class TodoListExtension {
         System.out.println("Task found: " + task.getName() + ", " + task.getDescription() + ", Completed: " + isCompleted);
         return true;
     }
+
+    public boolean getTask(String id) {
+        return true;
+    }
 }
