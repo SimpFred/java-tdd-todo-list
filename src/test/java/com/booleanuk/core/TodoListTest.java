@@ -15,5 +15,8 @@ class TodoListTest {
         TodoList todoList = new TodoList();
         Task task = new Task("task name", "task description");
         Assertions.assertTrue(todoList.addTask(task, false), "The task should be added to the TodoList");
+
+        Task task2 = new Task(null, "task description");
+        Assertions.assertFalse(todoList.addTask(task2, false), "The task should not be added to the TodoList");
     }
 }
