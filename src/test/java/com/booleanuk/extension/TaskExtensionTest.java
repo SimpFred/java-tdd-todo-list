@@ -34,6 +34,7 @@ public class TaskExtensionTest {
     @Test
     public void testGetCreatedAt() {
         TaskExtension task = new TaskExtension("task name1", "task description1");
+        Assertions.assertInstanceOf(LocalDateTime.class, task.getCreatedAt(), "The createdAt of the task should be an instance of LocalDateTime");
         LocalDateTime createdAt = task.getCreatedAt();
         Assertions.assertNotNull(createdAt, "The createdAt of the task should not be null");
         try {
