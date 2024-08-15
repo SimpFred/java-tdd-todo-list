@@ -39,5 +39,8 @@ class TodoListTest {
         todoList.addTask(task1, false);
         todoList.addTask(task2, false);
         Assertions.assertEquals(2, todoList.getAllTasks().size(), "The number of tasks should be 2");
+
+        todoList.removeTask(task1);
+        Assertions.assertEquals(1, todoList.getAllTasks().size(), "The number of tasks should be 1");
     }
 }
