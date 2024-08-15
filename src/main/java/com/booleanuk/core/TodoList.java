@@ -1,6 +1,7 @@
 package com.booleanuk.core;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TodoList {
@@ -24,5 +25,9 @@ public class TodoList {
         }
         tasks.remove(task);
         return true;
+    }
+
+    public List<Task> getAllTasks() {
+        return List.copyOf(tasks.keySet());
     }
 }
