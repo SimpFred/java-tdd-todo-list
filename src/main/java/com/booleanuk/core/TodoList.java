@@ -32,6 +32,10 @@ public class TodoList {
     }
 
     public boolean changeTaskStatus(Task task, boolean isCompleted) {
+        if (task == null) {
+            return false;
+        }
+        tasks.put(task, isCompleted);
         return true;
     }
 }
