@@ -42,5 +42,8 @@ class TodoListTest {
 
         todoList.removeTask(task1);
         Assertions.assertEquals(1, todoList.getAllTasks().size(), "The number of tasks should be 1");
+
+        todoList.removeTask(task2);
+        Assertions.assertEquals(0, todoList.getAllTasks().size(), "The number of tasks should be 0");
     }
 }
