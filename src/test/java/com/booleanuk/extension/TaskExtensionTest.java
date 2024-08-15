@@ -3,6 +3,8 @@ package com.booleanuk.extension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 public class TaskExtensionTest {
 
     @Test
@@ -32,6 +34,7 @@ public class TaskExtensionTest {
     @Test
     public void testGetCreatedAt() {
         TaskExtension task = new TaskExtension("task name", "task description");
-        Assertions.assertNotNull(task.getCreatedAt(), "The created at of the task should not be null");
+        LocalDateTime createdAt = task.getCreatedAt();
+        Assertions.assertNotNull(createdAt, "The createdAt of the task should not be null");
     }
 }
